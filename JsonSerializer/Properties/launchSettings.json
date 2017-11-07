@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Subash": {
+    "JsonSerilizerASP": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

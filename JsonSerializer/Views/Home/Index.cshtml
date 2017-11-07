@@ -1,0 +1,55 @@
+﻿@model IEnumerable<JsonSerilizerASP.Models.PropertyData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YearBuilt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MonthlyRent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrossYield)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <form asp-controller="Home" asp-action="Post">  
+            <td>
+                <input name="Address" type="text" value="@item.Address"/>
+            </td>
+            <td>
+                <input name="YearBuilt" type="text" value="@item.YearBuilt" />
+            </td>
+            <td>
+                <input name="ListPrice" type="text" value="@item.ListPrice" />
+            </td>
+            <td>
+                <input name="MonthlyRent" type="text" value="@item.MonthlyRent" />
+            </td>
+            <td>
+                @Html.DisplayTextFor(model => item.GrossYield)
+            </td>
+            <td>
+                <input type="hidden" name="Id" value="@item.Id" />
+                <input class="btn btn-default" type="submit" value="Update"/>
+            </td>
+        </form>
+    </tr>
+}
+    </tbody>
+</table>
